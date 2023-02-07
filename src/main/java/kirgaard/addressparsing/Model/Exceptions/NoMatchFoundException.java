@@ -1,4 +1,4 @@
-package Model.Exceptions;
+package kirgaard.addressparsing.Model.Exceptions;
 
 public class NoMatchFoundException extends Exception{
     public NoMatchFoundException(){

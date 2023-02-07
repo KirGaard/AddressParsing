@@ -1,4 +1,4 @@
-package Utility.Exceptions;
+package kirgaard.addressparsing.Exceptions;
 
 public class NotImplementedYetException extends RuntimeException{
     public NotImplementedYetException(){

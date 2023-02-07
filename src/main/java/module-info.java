@@ -7,4 +7,7 @@ module kirgaard.addressparsing {
 
     opens kirgaard.addressparsing to javafx.fxml;
     exports kirgaard.addressparsing;
+
+    opens kirgaard.addressparsing.Controller to javafx.fxml;
+    exports kirgaard.addressparsing.Controller;
 }

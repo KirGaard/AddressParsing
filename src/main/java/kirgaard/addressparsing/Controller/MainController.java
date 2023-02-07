@@ -1,10 +1,10 @@
-package Controller;
+package kirgaard.addressparsing.Controller;
 
-import Model.Address;
-import Model.Exceptions.NoMatchFoundException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import kirgaard.addressparsing.Model.Address;
+import kirgaard.addressparsing.Model.Exceptions.NoMatchFoundException;
 
 public class MainController {
     @FXML private Label street;

@@ -1,5 +1,5 @@
-package Model;
-import Model.Exceptions.NoMatchFoundException;
+package kirgaard.addressparsing.Model;
+import kirgaard.addressparsing.Model.Exceptions.NoMatchFoundException;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
