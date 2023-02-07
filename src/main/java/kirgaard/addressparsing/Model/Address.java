@@ -27,15 +27,8 @@ public class Address {
                 + postcode + " " + city;
     }
 
-    private final static String REGEX = "" +
-            "(?<street>^[0-9]*[^0-9,]+)?" +
-            "(?<house>[0-9]{1,3}[a-z]?)?[^a-zæøå0-9]*" +
-            "(?<floor>(?:(?:kl)|(?:st)|(?:[0-9]+))\\\\.)?" +
-            "(?<door>(?:(?:th)|(?:tv)|(?:mf)|(?:[0-9]+|[a-z]|(?:[0-9]+-[a-z])|(?:[a-z]+-[0-9]))),)?[^a-zæøå0-9]*" +
-            "(?<additionalCity>[^0-9,.]+,?)?[^a-zæøå0-9]*" +
-            "(?<postcode>[0-9]{4})?[^a-zæøå0-9]*" +
-            "(?<city>[^0-9,.]+$)?";
-    private final static Pattern PATTERN = Pattern.compile(REGEX);
+    private final static String REGEX = "(?<street>^[^0-9,]+)?(?<house>[0-9]{1,3}[a-z]?)?[^a-zæøå0-9]*(?<floor>(?:(?:kl)|(?:st)|(?:[0-9]+))\\.)?[^a-zæøå0-9]*(?<side>(?:(?:th)|(?:tv)|(?:mf)|(?:[0-9]{1,2}|[a-z]|(?:[0-9]{1,2}-[a-z])|(?:[a-z]{1,2}-[0-9]))),)?[^a-zæøå0-9]*(?<additionalCity>[^0-9,.]+,?)?[^a-zæøå0-9]*(?<postcode>[0-9]{4})?[^a-zæøå0-9]*(?<city>[^0-9,.]+$)?";
+    private final static Pattern PATTERN = Pattern.compile(REGEX, Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
 
     public static Address parse(String input) throws NoMatchFoundException, IllegalArgumentException {
         if (input == null){
@@ -117,7 +110,7 @@ public class Address {
         }
 
         public Builder additionalCity(String _additionalCity) {
-            side = _additionalCity;
+            additionalCity = _additionalCity;
             return this;
         }
 

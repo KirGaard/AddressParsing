@@ -16,3 +16,8 @@
 .input-field{
    -fx-start-margin: 5 10 5 10;
 }
+.error-field{
+    -fx-background-color: transparent;
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+}

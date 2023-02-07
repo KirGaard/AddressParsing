@@ -15,6 +15,7 @@ public class MainController {
     @FXML private Label postcode;
     @FXML private Label city;
     @FXML private TextField inputField;
+    @FXML private Label error;
 
     @FXML
     public void initialize(){
@@ -31,9 +32,11 @@ public class MainController {
         }
 
         if (address == null){
+            error.setText("No match found");
             return;
         }
 
+        error.setText("");
         street.setText(address.street);
         house.setText(address.house);
         floor.setText(address.floor);
